@@ -1,0 +1,13 @@
+
+.title {
+    font-style: italic;
+}
+
+#movieTable {
+    background-color: lightskyblue;
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+}
