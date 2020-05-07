@@ -28,3 +28,13 @@ let food = ["Pecan pie", "Shrimp", "Quesadilla", "Cheese Cake", "Hotdog"];
  movies.forEach(movieTitle => console.log(movieTitle));
  //to return with embassys:
  movies.forEach((movieTitle, i) => console.log(i, movieTitle));
+
+
+ //iterable and enumerable
+ //iterable means it has numbers associated that we can parce through
+ //enumerable means
+ /*
+ - iterating means to "loop over all elements of a set, one by one"
+ - enumerating means to "give each element of a set an ordinal number, one by one"
+ */
+//good site with information: https://softwareengineering.stackexchange.com/questions/216988/is-there-a-difference-between-iterable-and-enumerable 
