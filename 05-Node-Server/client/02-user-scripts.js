@@ -1,0 +1,48 @@
+//POST /CREATE USER
+function userSignUp(){
+    let userName = document.getElementById('userSignUp').nodeValue;
+    let userPass = document.getElementById('passSignUp').nodeValue;
+    console.log(userName, userPass);
+
+    let newUserData = {user: {username: userName, password: userPass}};
+    fetch('http://localhost:3001/api/user/createuser', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newUserData)
+    })
+    .then(response => response.json())
+    .then(function (response) {
+        console.log(response.sessionToken);
+        let token = response.sessionToken;
+        localStorage.setItem('SessionToken', token);
+    });
+}
+
+function userSignIn(){
+    let userName = document.getElementById('userSignin').nodeValue;
+    let userPass = document.getElementById('passSignin').nodeValue;
+    console.log(userName, userPass);
+
+    let userData = {user : {username: userName, password: userPass}};
+    fetch('http://localhost:3001/api/user/signin', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => response.json())
+    .then(function (response) {
+        console.log(response.sessionToken);
+        let token = response.sessionToken;
+        localStorage.setItem('SessionToken', token);
+    });
+}
+
+function getSessionToken() {
+    var data = localStorage.getItem('SessionToken');
+    console.log(data);
+    return data;
+}
